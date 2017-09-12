@@ -17,5 +17,14 @@ let _ =
   (test_merge ([5;3;1], [6;4;2]) [6;5;4;3;2;1]);
   (test_merge ([1], [2]) [2;1]);
   (test_merge ([], [3;2]) [3;2]);
-  (test_merge ([5;3], []) [5;3]);
+  (test_merge ([5;3], []) [5;3])
 
+let _ =
+  let print_bool x =
+  print_endline (string_of_bool x) in
+  print_bool ([7;5;4;3;2;1] = merge ([7; 2; 1], [5; 4; 3]));
+  print_bool ([] = merge ([], []));
+  print_bool ([9;2] = merge ([9; 2], []));
+  print_bool ([7;3] = merge ([], [7; 3])); 
+  print_bool ([5;5;4;4;3;3] = merge ([5; 4; 3], [5; 4; 3])); 
+  print_bool ([8;6;5;4;3;2;1;0] = merge ([5; 3; 1], [8; 6; 4; 2; 0]))

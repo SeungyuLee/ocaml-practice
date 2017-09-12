@@ -14,4 +14,13 @@ let double (a: int): int = a * a
 let _ =
   let test_iter = test iter in
   (test_iter (3, double) 5 390625);
-  (test_iter (5, function x -> 2+x) 0 10);
+  (test_iter (5, function x -> 2+x) 0 10)
+  
+
+let _ =
+  let print_bool x =
+  print_endline (string_of_bool x) in
+  print_bool (6 = iter (3, function x -> 2+x) 0 );
+  print_bool (4 = iter (0, function x -> 2*x) 4 );
+  print_bool (16383 = iter (11, function x -> 2*x+1) 7)
+  
