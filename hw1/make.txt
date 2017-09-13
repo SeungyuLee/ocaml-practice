@@ -1,0 +1,7 @@
+ocamlopt -c merge_final.ml
+ocamlopt -c iter_final.ml
+ocamlopt -c natop_final.ml
+ocamlopt -c sigma_final.ml
+ocamlopt -c main.ml
+ocamlopt -o main merge_final.cmx sigma_final.cmx natop_final.cmx iter_final.cmx main.cmx
+./main

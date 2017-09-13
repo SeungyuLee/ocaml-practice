@@ -27,7 +27,7 @@ let rec natmul ((a: nat), (b: nat)): nat =
   | (a, ZERO) -> ZERO
   | (SUCC ZERO, b) -> b
   | (a, SUCC ZERO) -> a
-  | (a, b) -> natmul (iter(b, succ) a, pred b)
+  | (a, b) -> natadd (natmul(pred a, b), b)
 
 
 let _ =
